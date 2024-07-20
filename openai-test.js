@@ -1,9 +1,11 @@
 import { OpenAI } from 'openai'
+import 'dotenv/config'
 
 const openai = new OpenAI({
     // Usually from bashrc or zshrc
-    // apiKey: process.env.OPENAI_API_KEY,
-    project: process.env.$OPENAI_API_KEY,
+    // but using dotenv
+    // apiKey: process.env.OPENAI_PROJECT_KEY,
+    project: process.env.$OPENAI_PROJECT_KEY,
 })
 
 async function main() {
