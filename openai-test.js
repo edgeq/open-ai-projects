@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import OpenAI from 'openai'
-
+// OPENAI_API_KEY environment variable cannot be missing or empty
+// If it is, you can set one up in .env or instantiate 
+// the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' })."
 const openai = new OpenAI()
 
 async function main() {
