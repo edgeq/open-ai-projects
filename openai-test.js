@@ -1,12 +1,7 @@
-import { OpenAI } from 'openai'
 import 'dotenv/config'
+import OpenAI from 'openai'
 
-const openai = new OpenAI({
-    // Usually from bashrc or zshrc
-    // but using dotenv
-    // apiKey: process.env.OPENAI_PROJECT_KEY,
-    project: process.env.$OPENAI_PROJECT_KEY,
-})
+const openai = new OpenAI()
 
 async function main() {
     const completion = await openai.chat.completions.create({
