@@ -6,6 +6,9 @@ import OpenAI from 'openai'
 const openai = new OpenAI()
 
 async function main() {
+    // It's called a 'completion' becase that's what
+    // Generative Pre-trained Transformers do...
+    // they predict or complete the next most probable word(s)
     const completion = await openai.chat.completions.create({
         messages: [{
             role: 'system',
