@@ -7,13 +7,16 @@ const rl = readline.createInterface({
 })
 // We also need to set up the ChatGPT system
 // making sure to pass along the history/context of the chat
-// along with the new message. 
+// along with the new message.
+// Remember that our tokens compound after every request.
 const newMessage = async (history, message) => {
     const results = await openai.chat.completions.create({
         model: 'gpt-4o-mini',
-        messages: [...history, message],
+        // spread the history to keep context
+        // lower temperature means less creative liberty
         temperature: 0.3,
     })
+    // monitor usage
     console.log('usage', results.usage)
     return results.choices[0].message
 }
